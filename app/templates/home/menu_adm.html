@@ -1,0 +1,50 @@
+{%extends 'base.html'%}
+
+{% block title %}
+categorias
+{% endblock %}
+
+{% block content %}
+{% include 'insearch.html' %}
+
+
+<div>
+    <h1 class="titulo">Menú de adminsitrador</h1>
+    <nav id="container">
+        <a href="{{ url_for('product.productos') }}" class="options">
+                <img src="" alt="imagen" >
+                <p>productos</p>
+            </a>
+
+            <a href="{{ url_for('usuario.user') }}" class="options">
+                <img src="" alt="imagen" >
+                <p>Personal</p>
+            </a>
+        
+            <a href="{{ url_for('cat.catp')}}" class="options">
+                <img src="" alt="imagen" >
+                <p>Categoria</p>
+            </a>
+        
+            <a href="{{ url_for('report.reports') }}" class="options">
+                <img src="" alt="imagen" >
+                <p>Venta y Reportes</p>
+            </a>
+        </nav>
+        
+            <nav id="container1">
+                
+                <a href="{{ url_for('brand.brands')}}" class="options">
+                    <img src="" alt="imagen" >
+                    <p>Marcas</p>
+                </a>
+                <a href="{{ url_for('supplier.suppliers')}}" class="options">
+                    <img src="" alt="imagen" >
+                    <p>proveedores</p>
+                </a>
+            </nav>
+</div>
+
+</header>
+{% endblock %}
+

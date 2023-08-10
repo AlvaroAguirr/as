@@ -1,0 +1,12 @@
+actualizar el css
+añadir la clases de los forms en los template de forms
+el form de producto se cambio
+la base de datos de producto y su view.py y su pagina donde muestra los productos fueron modificadas
+se añadieron los templates y views de marcas proveedores
+se crearon archivos.html para añadir el banner con buscador y uno sin buscador
+se añadieron un {% include insearch %} en paginas que NO requieren un buscador 
+se añadieron un {% include search %} en paginas que SI requieren un buscador 
+los templates de marca y proveedor no tienen aun funcion de actualizar ni estilo en el form de crear
+tampoco tienen el banner que se añade usando la funcion {% include insearch %}
+
+

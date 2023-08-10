@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Proveedores
+{% endblock %}
+
+{% block content %}
+<nav class="titulo">    
+    <h1>
+<a href="{{ url_for('login.adm_home') }}" class="bpr bpr-ed"> Regresar</a>
+        Pagina de Proveedores </h1></nav>    
+    
+
+
+    <a href="{{ url_for('supplier.create_sup')}}">
+        <input type="button" value="Agregar a agenda" class="bpr bpr-ac">
+    </a>
+    <nav class="a-table">
+        <table id="sale">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Localidad</th>
+                <th>Telefono</th>
+                <th>Direccion</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sup in supplier %}
+                <tr>
+                    <td>{{ sup.id_proveedor }}</td>
+                    <td>{{ sup.nombre }}</td>
+                    <td>{{ sup.localidad }}</td>
+                    <td>{{ sup.telefono }}</td>
+                    <td>{{ sup.direccion }}</td>
+                    <td>
+                        <a href="{{ url_for('supplier.create_sup', id_proveedor=sup.id_proveedor) }}">
+                            <button>Actualizar</button> 
+                        </a> 
+                        <form method="post" action="{{ url_for('supplier.delete_sup', id_proveedor=sup.id_proveedor) }}">
+                            <button type="submit"
+                                    onclick="return confirm('seguro')">
+                               borrar
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </nav>
+{% endblock %}
