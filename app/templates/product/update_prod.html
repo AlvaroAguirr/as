@@ -13,6 +13,7 @@
 </nav>
 
     <form method="Post" class="pdiv">
+        <input type="hidden" name="page" value="{{ page }}">
         {{ form.csrf_token }}
         <div class="func func-pro">
             {{ form.nombre.label(class ="txtlab")}}

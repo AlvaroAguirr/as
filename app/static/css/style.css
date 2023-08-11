@@ -30,7 +30,7 @@ width: 90%;
 }
 .fond
 {
-   
+ background-image:url(/integradora1-master/app/static/images/fondo.jpg);
     justify-content: center;
     margin-top: 10px;
     padding:5px ;
@@ -40,9 +40,8 @@ width: 90%;
     flex-direction: column;
     padding-bottom: 70px;
     border-radius: 6px;
-    box-shadow: 0px 0px 7px 7px #e5e5e5;
+    box-shadow: 0px 0px 7px 7px #e5e5e5; 
 
-    
 }
 .fond-c
 {
@@ -95,10 +94,10 @@ grid-template-columns: .4fr 1.4fr .3fr;
 
 .button-search{
     background-color: rgb(232, 205, 131);
-    color: white;
+    color: rgb(238, 238, 238);
     border-radius: 7px;
     cursor: pointer;
-    height: 50px;
+    height: 45px;
     width: 15%;
     font-size: var(--md);
     border:none
@@ -133,6 +132,7 @@ grid-template-columns:1fr 1fr;
 }
 
 .options{
+    background-color:rgba(174, 247, 188, 0.479);
     font-size: 18px;
 border: 3px solid black;
 border-radius: 17px;
@@ -142,11 +142,13 @@ width: 275px;
 text-align: center;
 text-decoration: none;
 
+
 }
 #sale {
     width: 100%;
     border-collapse: collapse;
     border-top: 17px;
+    margin-bottom: 19px;
     
 }
 
@@ -165,12 +167,11 @@ text-decoration: none;
 
 }
 
-#sale tr:nth-child(even){background-color: #f2f2f2;}
+#sale tr:nth-child(even){background-color: #efefef;}
 
   #sale tr:hover {background-color: #ddd;}
   .login{
       margin-bottom: 18px;
-      
 }
 
 #user {
@@ -423,4 +424,11 @@ display: flex;
 .item{
     grid-row-start: 1;
     grid-column-start: 2 ;
+}
+.pasar{
+text-decoration: none ;
+font-size: var(--tlg);
+margin-left: 10px;
+
+color: #a79090;
 }

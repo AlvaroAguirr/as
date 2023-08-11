@@ -14,15 +14,34 @@ def create_sup():
     form=CreateSupplierForm()
     if form.validate_on_submit():
         nombre=form.nombre.data
-        sup= Supplier(nombre)
+        localidad= form.localidad.data
+        telefono= form.telefono.data
+        direccion=form.direccion.data
+        sup= Supplier(nombre=nombre,
+                      localidad=localidad,
+                      telefono=telefono,
+                      direccion=direccion)
         sup.save()
         return redirect(url_for('supplier.suppliers'))
-
     return render_template("/supplier/create_sup.html", form=form)
 
-@supplier_views.route("/supplier/Editar")
-def editar_sup():
-    return render_template("/supplier/create_sup.html")
+@supplier_views.route("/supplier/Editar", methods=('GET','POST'))
+def editar_sup(id_proveedor):
+    form=UpdateSupplierForm
+    sup= Supplier.get(id_proveedor)
+    if form.validate_on_submit():
+        sup.nombre=form.nombre.data
+        sup.localidad=form.localidad.data
+        sup.telefono=form.telefono.data
+        sup.direccion=form.direccion.data
+        sup.save()
+        return redirect(url_for('supplier.suppliers'))
+    form.nombre.data=sup.nombre
+    form.localidad.data=sup.localidad
+    form.telefono.data=sup.telefono
+    form.direccion.data=sup.direccion
+        
+    return render_template("/supplier/create_sup.html", form=form)
 
 
 @supplier_views.route("/supplier/del")

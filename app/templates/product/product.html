@@ -45,7 +45,7 @@
                     <td>
                         
                             <a href="{{ url_for('product.updateprod', id_producto=pro.id_producto) }} ">
-                                <button>Actualizar</button> 
+                                <button>Actualizar</button>
                             </a> 
                         <form method="Post" action="{{url_for('product.delprod', id_producto=pro.id_producto) }}" >
                             <input type="hidden" name="page" value="{{ page }}">
@@ -59,7 +59,7 @@
         </tbody>
     </table>
     {% for i in range(pages) %}
-<a href="{{ url_for('product.productos', page=(i + 1)) }}">{{ i + 1 }}</a>
+<a href="{{ url_for('product.productos', page=(i + 1)) }}" class="pasar">{{ i + 1 }}</a>
 {% endfor %}
 </nav>
 {% endblock %}

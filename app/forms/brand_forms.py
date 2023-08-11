@@ -12,4 +12,4 @@ class UpdateBrandForm(FlaskForm):
     nombre = StringField('nombre', 
                            validators=[DataRequired()])
      
-    submit = SubmitField('Guardar')
+    submit = SubmitField('Actualizar')

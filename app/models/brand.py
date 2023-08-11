@@ -13,7 +13,7 @@ class Brand:
         if self.id_marca is None:
             with mydb.cursor() as cursor:
                 sql = "INSERT INTO brand(nombre) VALUES(%s)"
-                val = (self.nombre)
+                val = (self.nombre,)
                 cursor.execute(sql, val)
                 mydb.commit()
                 self.id_marca = cursor.lastrowid
