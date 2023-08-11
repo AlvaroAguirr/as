@@ -33,7 +33,8 @@
                         <a href="{{ url_for('cat.cate', id_categoria=cat.id_categoria) }}">
                             <button>Actualizar</button>
                         </a> 
-                        <form method="post" action="{{ url_for('cat.delete_cat', id_categoria=cat.id_categoria) }}">
+                        <form method="Post" action="{{ url_for('cat.delete_cat', id_categoria=cat.id_categoria) }}">
+                            <input type="hidden" name="page" value="{{ page }}">
                             <button type="submit" onclick="return confirm('¿seguro de borrar este objeto?')" class="fa">Eliminar</button>
                     </form>
                 </td>
@@ -41,5 +42,8 @@
             {% endfor %}
         </tbody>
     </table>
+    {% for i in range(pages) %}
+<a href="{{ url_for('cat.catp', page=(i + 1)) }}" class="pasar">{{ i + 1 }}</a>
+{% endfor %}
 </nav>
 {% endblock %}

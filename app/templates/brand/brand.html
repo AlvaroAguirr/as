@@ -50,5 +50,9 @@
             {% endfor %}
         </tbody>
     </table>
+    {% for i in range(pages) %}
+    <a href="{{ url_for('brand.brands', page=(i + 1)) }}" class="pasar">{{ i + 1 }}</a>
+    {% endfor %}
+
 </nav>
 {% endblock %}

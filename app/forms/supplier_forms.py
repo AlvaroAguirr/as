@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, TextAreaField, SubmitField, Integerfield
+from wtforms import StringField, TextAreaField, SubmitField, IntegerField
 from wtforms.validators import DataRequired, NumberRange
 
 class CreateSupplierForm(FlaskForm):
@@ -9,7 +9,7 @@ class CreateSupplierForm(FlaskForm):
     localidad = StringField('Localidad', 
                            validators=[DataRequired()])
 
-    telefono = Integerfield('Telefono', 
+    telefono = IntegerField('Telefono', 
                            validators=[DataRequired(), NumberRange(min=0.0, max=10)])
 
     direccion = StringField('Direccion', 

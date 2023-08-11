@@ -20,7 +20,7 @@ def productos(page=1):
                            product=product, pages=pages, page=page)
 
 @product_views.route("/crear_productos", methods=('GET','POST'))
-def c_produ():
+def c_produ( ):
     form= CreateProductForm()
     categories = Category.get_all()
     cats=[(-1, '')]

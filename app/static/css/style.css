@@ -30,7 +30,8 @@ width: 90%;
 }
 .fond
 {
- background-image:url(/integradora1-master/app/static/images/fondo.jpg);
+ background-position: center;
+ background-size: cover;
     justify-content: center;
     margin-top: 10px;
     padding:5px ;
@@ -132,7 +133,7 @@ grid-template-columns:1fr 1fr;
 }
 
 .options{
-    background-color:rgba(174, 247, 188, 0.479);
+    background-color:rgba(214, 247, 174, 0.899);
     font-size: 18px;
 border: 3px solid black;
 border-radius: 17px;
